@@ -1,0 +1,240 @@
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --primary: #238636;
+  --primary-hover: #2ea043;
+  --accent: #58a6ff;
+  --text: #c9d1d9;
+  --text-heading: #f0f6fc;
+  --danger: #f85149;
+  --warning: #d29922;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.emblem {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 1.35rem;
+  color: var(--text-heading);
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: #8b949e;
+}
+
+.badge {
+  background-color: rgba(56, 139, 253, 0.15);
+  color: var(--accent);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  border: 1px solid var(--accent);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: var(--card-bg);
+  color: var(--text-heading);
+}
+
+.tab-btn.active {
+  background: var(--card-bg);
+  border-color: var(--border);
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.75rem;
+}
+
+.card h2 {
+  color: var(--text-heading);
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: #8b949e;
+  margin-bottom: 1.25rem;
+}
+
+textarea, input, select {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+textarea:focus, input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.primary-btn {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.grid-form .full {
+  grid-column: span 2;
+}
+
+.field label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b949e;
+  margin-bottom: 0.3rem;
+}
+
+.output-box {
+  margin-top: 1.5rem;
+  background: #090d13;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.output-box.hidden {
+  display: none;
+}
+
+.statute-card {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.statute-title {
+  color: var(--text-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.statute-score {
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.825rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #e6edf3;
+  background: #04070b;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.tag-risk {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.tag-risk.HIGH {
+  background: rgba(248, 81, 73, 0.2);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.tag-risk.MEDIUM {
+  background: rgba(210, 153, 34, 0.2);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyaya AI | Indian Legal Intelligence Platform</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <span class="emblem">⚖️</span>
+      <div>
+        <h1>Nyaya AI</h1>
+        <p class="subtitle">Indian Legal NLP & Statutory Intelligence Engine</p>
+      </div>
+    </div>
+    <div class="nav-status">
+      <span class="badge">BNS / IPC / NI Act Compliant</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="switchTab('query-tab')">🔍 Legal Query Engine</button>
+      <button class="tab-btn" onclick="switchTab('summarize-tab')">📄 Document Summarizer</button>
+      <button class="tab-btn" onclick="switchTab('draft-tab')">✍️ Notice Drafter</button>
+      <button class="tab-btn" onclick="switchTab('analyze-tab')">🛡️️ Contract & Risk Scanner</button>
+    </nav>
+
+    <!-- TAB 1: Query Engine -->
+    <section id="query-tab" class="tab-panel active">
+      <div class="card">
+        <h2>Statutory Search & Indian Law Advisory</h2>
+        <p class="desc">Ask any question regarding crimes, civil disputes, cheque dishonours, or cyber frauds.</p>
+        <div class="input-group">
+          <textarea id="queryInput" rows="3" placeholder="Example: A borrower gave me a cheque of 5 lakhs which bounced due to insufficient funds. What legal actions can I take?"></textarea>
+          <button class="primary-btn" onclick="submitQuery()">Search Statutory Provisions</button>
+        </div>
+        <div id="queryResults" class="output-box hidden"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Document Summarizer -->
+    <section id="summarize-tab" class="tab-panel">
+      <div class="card">
+        <h2>Extractive Legal Document Summarizer</h2>
+        <p class="desc">Paste judgments, affidavits, or contracts to generate an automated executive summary.</p>
+        <div class="input-group">
+          <textarea id="summarizeInput" rows="7" placeholder="Paste full legal text here..."></textarea>
+          <button class="primary-btn" onclick="submitSummarize()">Summarize Text</button>
+        </div>
+        <div id="summarizeResults" class="output-box hidden"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: Notice Drafter -->
+    <section id="draft-tab" class="tab-panel">
+      <div class="card">
+        <h2>Court-Ready Statutory Legal Notice Drafter</h2>
+        <p class="desc">Draft custom formal notices with automatic 15-day statutory compliance clauses.</p>
+        <div class="grid-form">
+          <div class="field">
+            <label>Sender / Client Full Name:</label>
+            <input type="text" id="clientName" placeholder="e.g., Ramesh Sharma">
+          </div>
+          <div class="field">
+            <label>Opposite Party (Recipient):</label>
+            <input type="text" id="oppositeParty" placeholder="e.g., M/s Apex Tech Solutions">
+          </div>
+          <div class="field">
+            <label>Notice Type:</label>
+            <select id="issueType">
+              <option value="cheque_bounce">Cheque Bounce (Sec 138 NI Act)</option>
+              <option value="recovery">Recovery of Outstanding Dues</option>
+              <option value="tenant_eviction">Tenant Eviction & Rent Default</option>
+              <option value="general">General Statutory Demand</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Claim Amount (INR):</label>
+            <input type="text" id="amount" placeholder="e.g., 2,50,000">
+          </div>
+          <div class="field full">
+            <label>Case Details & Timeline of Default:</label>
+            <textarea id="draftDetails" rows="4" placeholder="Detail the transaction dates, cheque numbers, invoices, or breach incidents..."></textarea>
+          </div>
+        </div>
+        <button class="primary-btn" onclick="submitDraft()">Generate Legal Notice</button>
+        <div id="draftResults" class="output-box hidden"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: Contract Risk Scanner -->
+    <section id="analyze-tab" class="tab-panel">
+      <div class="card">
+        <h2>Contract & Risk Clause Analyzer</h2>
+        <p class="desc">Identify unilateral clauses, uncapped indemnities, and jurisdiction traps inside legal contracts.</p>
+        <div class="input-group">
+          <textarea id="analyzeInput" rows="7" placeholder="Paste lease clauses, employment bonds, or service agreement paragraphs here..."></textarea>
+          <button class="primary-btn" onclick="submitAnalyze()">Analyze Clauses</button>
+        </div>
+        <div id="analyzeResults" class="output-box hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
